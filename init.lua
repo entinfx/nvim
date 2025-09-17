@@ -2,11 +2,15 @@
 -- vim.cmd('source ./.vimrc')
 
 -- Require user config files (~/.config/nvim/lua/config/)
+require('config.autocmd')
 require('config.keybinds')
 require('config.options')
 
 -- Require Lazy Package Manager config file
 require('config.lazy')
+
+-- Require LSP setup
+require('config.lsp')
 
 -- Set default color scheme
 vim.o.termguicolors = false

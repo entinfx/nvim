@@ -1,17 +1,31 @@
 -- Tabs
-vim.o.expandtab = true -- insert space characters when <tab> is pressed
-vim.o.softtabstop = 4 -- number of spaces to insert when <tab> is pressed
-vim.o.tabstop = 4 -- width of tab characters
-vim.o.shiftwidth = 4 -- width of level of indentation
-vim.o.smartindent = true
-vim.o.autoindent = true
+vim.opt.expandtab = true -- insert space characters when <tab> is pressed
+vim.opt.softtabstop = 4 -- number of spaces to insert when <tab> is pressed
+vim.opt.tabstop = 4 -- width of tab characters
+vim.opt.shiftwidth = 4 -- width of level of indentation
+vim.opt.smartindent = true
+vim.opt.autoindent = true
 
--- Lines
-vim.o.number = true
-vim.o.wildmenu = true
-vim.o.cursorline = true
-vim.o.scrolloff = 8
-vim.o.colorcolumn = '80'
+
+-- General
+vim.opt.wildmenu = true
+vim.opt.cursorline = true
+vim.opt.scrolloff = 8
+vim.opt.colorcolumn = '80'
+
+
+-- Line numbers
+--
+-- Custom statuscolumn separator:
+--
+-- %s - Warnings/errors field (used by LSP)
+-- %= - Align content to the right
+-- %l - Line number
+-- %#StatusColumnSeparator# - Custom highlight group
+vim.opt.statuscolumn = "%s%=%l %#StatusColumnSeparator#│ "
+
+vim.opt.number = true
+
 
 -- Invisible Characters
 vim.opt.listchars = {
@@ -20,17 +34,20 @@ vim.opt.listchars = {
     tab = '> '
 }
 
+
 -- Splits
-vim.o.splitbelow = true
-vim.o.splitright = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 
 -- Searching
-vim.o.smartcase = true
-vim.o.ignorecase = true
-vim.o.incsearch = true
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.incsearch = true
+
 
 -- Status Line
-vim.o.laststatus = 2 -- Always display the statusline in all windows
+vim.opt.laststatus = 2 -- Always display the statusline in all windows
 
 local statusline = {
     -- %<1-5>* - custom defined highlight group in the colorscheme file:
@@ -62,7 +79,12 @@ local statusline = {
     'Col: %v%* ', -- current column
 }
 
-vim.o.statusline = table.concat(statusline, '')
+vim.opt.statusline = table.concat(statusline, '')
+
+
+-- Floating windows
+vim.opt.winborder = 'rounded'
+
 
 -- Delete trailing whitespace (Vimscript)
 vim.cmd([[
@@ -75,6 +97,7 @@ vim.cmd([[
 
     autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 ]])
+
 
 -- Netrw
 -- netrw_banner = 0

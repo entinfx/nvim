@@ -33,5 +33,9 @@ require("lazy").setup({
   -- checker = { enabled = true },
   install = { colorscheme = { "garden" } },
   change_detection = {  inotify = false },
+  ui = {
+        border = "rounded",
+        backdrop = 80,
+    }
 })
 

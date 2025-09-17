@@ -32,12 +32,11 @@ endif
 
 let g:colors_name = "garden"
 
-" highlight! ColorGroup   term=NONE cterm=NONE ctermfg=NONE ctermbg=NONE
-
 highlight! CursorLine   cterm=NONE              ctermbg=255
-highlight! CursorLineNr cterm=NONE ctermfg=255  ctermbg=37
-highlight! LineNr       cterm=NONE ctermfg=241  ctermbg=253
+highlight! CursorLineNr cterm=NONE ctermfg=233  ctermbg=NONE
+highlight! LineNr       cterm=NONE ctermfg=244  ctermbg=253
 highlight! ColorColumn  cterm=NONE              ctermbg=251
+highlight! StatusColumnSeparator cterm=NONE ctermfg=249  ctermbg=253
 
 highlight! TabLine      cterm=NONE ctermfg=236  ctermbg=247
 highlight! TabLineSel   cterm=NONE ctermfg=236  ctermbg=253
@@ -54,23 +53,23 @@ highlight! StatusLineNC cterm=NONE ctermfg=235  ctermbg=249
 highlight! WildMenu     cterm=NONE ctermfg=16  ctermbg=255
 highlight! VertSplit    cterm=NONE ctermfg=249 ctermbg=249
 highlight! WinSeparator cterm=NONE ctermfg=249  ctermbg=249
-highlight! Visual       cterm=NONE ctermfg=255  ctermbg=249
+highlight! Visual       cterm=NONE ctermfg=255  ctermbg=248
 highlight! SpecialKey   cterm=NONE ctermfg=245
 highlight! NonText      cterm=NONE ctermfg=245
 
 highlight! ModeMsg      cterm=NONE ctermfg=255 ctermbg=37
 
-highlight! Pmenu        cterm=NONE ctermfg=236 ctermbg=250
-highlight! PmenuSel     cterm=NONE ctermfg=255 ctermbg=68
-highlight! PmenuSbar    cterm=NONE             ctermbg=245
-highlight! PmenuThumb   cterm=NONE             ctermbg=242
+highlight! Pmenu        cterm=NONE ctermfg=240 ctermbg=255
+highlight! PmenuSel     cterm=NONE ctermfg=233 ctermbg=215
+highlight! PmenuSbar    cterm=NONE             ctermbg=250
+highlight! PmenuThumb   cterm=NONE             ctermbg=245
 
 highlight! Directory    cterm=NONE ctermfg=18
 highlight! Normal       cterm=NONE ctermfg=237 ctermbg=253
-highlight! NormalFloat  cterm=NONE ctermfg=237 ctermbg=250
+highlight! NormalFloat  cterm=NONE ctermfg=237 ctermbg=253
 highlight! Comment      cterm=NONE ctermfg=241
 highlight! Constant     cterm=NONE ctermfg=97
-highlight! Special      cterm=NONE ctermfg=52
+highlight! Special      cterm=NONE ctermfg=88
 highlight! Identifier   cterm=NONE ctermfg=126
 highlight! Statement    cterm=NONE ctermfg=30
 highlight! PreProc      cterm=NONE ctermfg=58
@@ -82,19 +81,27 @@ highlight! Tag          cterm=NONE ctermfg=36
 highlight! Folded       cterm=NONE ctermfg=134 ctermbg=NONE
 highlight! Error        cterm=NONE ctermfg=255 ctermbg=196
 highlight! WarningMsg   cterm=NONE ctermfg=255 ctermbg=172
+
+highlight! DiagnosticError cterm=NONE ctermfg=160 ctermbg=NONE
+highlight! DiagnosticWarn cterm=NONE ctermfg=166 ctermbg=NONE
+highlight! DiagnosticHint cterm=NONE ctermfg=98 ctermbg=NONE
+highlight! DiagnosticInfo cterm=NONE ctermfg=28 ctermbg=NONE
+highlight! DiagnosticOk cterm=NONE ctermfg=28 ctermbg=NONE
+
 highlight! SpellBad     cterm=NONE ctermfg=255 ctermbg=124
-highlight! Todo         cterm=NONE ctermfg=255 ctermbg=135
+highlight! Todo         cterm=NONE ctermfg=255 ctermbg=31
 highlight! Underlined   cterm=NONE ctermfg=126
 highlight! Ignore       cterm=NONE ctermfg=243
 
 " Custom highlight groups for plugins:
 highlight! IblIndent    cterm=NONE ctermfg=247  ctermbg=NONE
 highlight! IblScope     cterm=NONE ctermfg=242  ctermbg=NONE
-" highlight! IblWhitespace cterm=NONE ctermfg=NONE  ctermbg=252
 highlight! IblWhitespace cterm=NONE ctermfg=NONE  ctermbg=NONE
-highlight! LazyButton    cterm=NONE ctermfg=239 ctermbg=253
-" highlight! LazyButtonActive cterm=NONE ctermfg=255 ctermbg=68
+highlight! LazyButton    cterm=NONE ctermfg=239 ctermbg=255
+highlight! LazyButtonActive cterm=NONE ctermfg=255 ctermbg=68
+highlight! highlight-yank cterm=NONE ctermfg=236 ctermbg=121
 
+" Links
 highlight! link ErrorMsg Error
 highlight! link MoreMsg Comment
 highlight! link Question Comment
