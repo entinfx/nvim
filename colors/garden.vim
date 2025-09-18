@@ -5,7 +5,6 @@
 " @entinfx (github.com/entinfx)
 "
 "
-"
 " Terminology
 "
 " term  - Basic Terminal (supports 'bold', 'underline', 'italic', 'reverse')
@@ -14,12 +13,7 @@
 "         'italic', 'standout' [rarely used], 'strikethrough', 'blink',
 "         'nocombine' [rarely used])
 " gui   - 24-bit Color Terminal (supports #000000-#ffffff colors)
-"
-"
-"
-" Tags testing
-"
-" TODO FIXME XXX
+
 
 set background=light
 highlight clear
@@ -32,9 +26,9 @@ endif
 
 let g:colors_name = "garden"
 
-highlight! CursorLine   cterm=NONE              ctermbg=255
+highlight! CursorLine   cterm=NONE              ctermbg=254
 highlight! CursorLineNr cterm=NONE ctermfg=233  ctermbg=NONE
-highlight! LineNr       cterm=NONE ctermfg=244  ctermbg=253
+highlight! LineNr       cterm=NONE ctermfg=245  ctermbg=253
 highlight! ColorColumn  cterm=NONE              ctermbg=251
 highlight! StatusColumnSeparator cterm=NONE ctermfg=249  ctermbg=253
 
@@ -48,7 +42,7 @@ highlight User3         cterm=NONE ctermfg=236 ctermbg=35
 highlight User4         cterm=NONE ctermfg=236 ctermbg=181
 highlight User5         cterm=NONE ctermfg=236 ctermbg=179
 
-highlight! StatusLine   cterm=NONE ctermfg=255 ctermbg=68
+highlight! StatusLine   cterm=NONE ctermfg=255 ctermbg=104
 highlight! StatusLineNC cterm=NONE ctermfg=235  ctermbg=249
 highlight! WildMenu     cterm=NONE ctermfg=16  ctermbg=255
 highlight! VertSplit    cterm=NONE ctermfg=249 ctermbg=249
@@ -60,7 +54,7 @@ highlight! NonText      cterm=NONE ctermfg=245
 highlight! ModeMsg      cterm=NONE ctermfg=255 ctermbg=37
 
 highlight! Pmenu        cterm=NONE ctermfg=240 ctermbg=255
-highlight! PmenuSel     cterm=NONE ctermfg=233 ctermbg=215
+highlight! PmenuSel     cterm=NONE ctermfg=255 ctermbg=139
 highlight! PmenuSbar    cterm=NONE             ctermbg=250
 highlight! PmenuThumb   cterm=NONE             ctermbg=245
 
@@ -88,8 +82,11 @@ highlight! DiagnosticHint cterm=NONE ctermfg=98 ctermbg=NONE
 highlight! DiagnosticInfo cterm=NONE ctermfg=28 ctermbg=NONE
 highlight! DiagnosticOk cterm=NONE ctermfg=28 ctermbg=NONE
 
-highlight! SpellBad     cterm=NONE ctermfg=255 ctermbg=124
-highlight! Todo         cterm=NONE ctermfg=255 ctermbg=31
+highlight! SpellBad     cterm=NONE ctermfg=255 ctermbg=167 " Tset
+highlight! SpellCap     cterm=NONE ctermfg=255 ctermbg=104 " Test. test.
+highlight! SpellLocal     cterm=NONE ctermfg=255 ctermbg=66 " Colour
+highlight! SpellRare     cterm=NONE ctermfg=255 ctermbg=173 " Ephemeral
+highlight! Todo         cterm=NONE ctermfg=255 ctermbg=31 " TODO
 highlight! Underlined   cterm=NONE ctermfg=126
 highlight! Ignore       cterm=NONE ctermfg=243
 

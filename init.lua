@@ -12,7 +12,3 @@ require('config.lazy')
 -- Require LSP setup
 require('config.lsp')
 
--- Set default color scheme
-vim.o.termguicolors = false
-vim.cmd('colorscheme garden')
-

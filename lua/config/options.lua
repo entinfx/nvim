@@ -1,8 +1,8 @@
 -- Tabs
 vim.opt.expandtab = true -- insert space characters when <tab> is pressed
-vim.opt.softtabstop = 4 -- number of spaces to insert when <tab> is pressed
-vim.opt.tabstop = 4 -- width of tab characters
-vim.opt.shiftwidth = 4 -- width of level of indentation
+vim.opt.softtabstop = 4  -- number of spaces to insert when <tab> is pressed
+vim.opt.tabstop = 4      -- width of tab characters
+vim.opt.shiftwidth = 4   -- width of level of indentation
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
@@ -12,19 +12,6 @@ vim.opt.wildmenu = true
 vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.colorcolumn = '80'
-
-
--- Line numbers
---
--- Custom statuscolumn separator:
---
--- %s - Warnings/errors field (used by LSP)
--- %= - Align content to the right
--- %l - Line number
--- %#StatusColumnSeparator# - Custom highlight group
-vim.opt.statuscolumn = "%s%=%l %#StatusColumnSeparator#│ "
-
-vim.opt.number = true
 
 
 -- Invisible Characters
@@ -44,6 +31,21 @@ vim.opt.splitright = true
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.incsearch = true
+
+
+-- Spelling
+vim.o.spelllang = "en"
+
+
+-- Status Column
+--
+-- %s - Warnings/errors field (used by LSP)
+-- %= - Align content to the right
+-- %l - Line number
+-- %#StatusColumnSeparator# - Custom highlight group
+vim.opt.statuscolumn = "%s%=%l %#StatusColumnSeparator#│ "
+
+vim.opt.number = true
 
 
 -- Status Line
@@ -67,16 +69,17 @@ local statusline = {
     '%0*'            -- reset color
     --]]
 
-    ' %{&ff}%*',  -- file format
-    ' %y %*',     -- file type
-    ' %f %*',     -- file path [use %<%F for full path]
-    '%m%*',       -- modified flag
-    '%=%*',       -- -->
-    'Ln: %l%*',   -- current line
-    '/%*',        -- '/'
-    '%L%*',       -- total lines
-    ' %*',        -- ' '
-    'Col: %v%* ', -- current column
+    ' %y │ ', -- file type
+    '%f ', -- file path
+    '%m ', -- modified flag
+    '%=', -- -->
+    'Ln %l', -- current line
+    '/', -- '/'
+    '%L ', -- total lines
+    '%P │ ', -- Percentage through file
+    'Col %v │ ', -- current column
+    "%{&spelllang} ", -- spelllang
+    "%{&ff} ", -- file format
 }
 
 vim.opt.statusline = table.concat(statusline, '')
@@ -111,3 +114,7 @@ vim.cmd([[
 -- NERDTreeWinPos = "right"
 -- NERDTreeWinSize = 40
 
+
+-- Set default color scheme
+vim.o.termguicolors = false
+vim.cmd('colorscheme garden')

@@ -19,22 +19,63 @@
 -- * gri        - List all implementations of current symbol
 -- * ctrl-w + d - Show error/warning for current line
 
+
 -- Enable automatic dynamic autocompletion
+--
+-- Creates Autocommand on 'LspAttach' event (when Neovim attaches to LS)
 vim.api.nvim_create_autocmd("LspAttach", {
-    callback = function(ev)
+    callback = function (ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+        if not client then
+            return
+        end
 
         if client:supports_method("textDocument/completion") then
             vim.opt.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup" }
             vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
 
             -- Assign <C-Space> to re-enable completion after text deletion
-            vim.keymap.set("i", "<C-Space>", function()
+            vim.keymap.set("i", "<C-Space>", function ()
                 vim.lsp.completion.get()
             end)
         end
     end,
 })
+
+
+-- Format current buffer on save
+--
+-- Neovim and LuaLS support '.editorconfig'.
+-- Place the '.editorconfig' file in the root directory of your project to
+-- specify project defaults. Format example:
+--
+-- ```YAML
+-- [*.lua]
+-- indent_style = space
+-- indent_size = 4
+-- ```
+-- Some settings like indentation may be overridden by editor defaults.
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function (args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+        if not client then
+            return
+        end
+
+        if client:supports_method("textDocument/formatting") then
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                buffer = args.buf,
+
+                callback = function ()
+                    vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+                end,
+            })
+        end
+    end,
+})
+
 
 -- Set up diagnostic messages (warnings, errors)
 vim.diagnostic.config({
@@ -54,5 +95,4 @@ vim.diagnostic.config({
 })
 
 vim.opt.signcolumn = "yes" -- Always show signcolumn to avoid jumping
-vim.lsp.enable('lua_ls') -- Enable LSP
-
+vim.lsp.enable('lua_ls')   -- Enable LSP

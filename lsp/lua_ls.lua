@@ -24,7 +24,7 @@ return {
     settings = {
         Lua = {
             runtime = {
-                version = 'LuaJIT', -- Neovim uses LuaJIT
+                version = 'LuaJIT',                  -- Neovim uses LuaJIT
                 path = vim.split(package.path, ";"), -- Use Neovim's Lua path
             },
 
@@ -45,4 +45,3 @@ return {
         },
     },
 }
-
