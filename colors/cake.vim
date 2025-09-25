@@ -46,8 +46,8 @@ highlight User3         cterm=NONE ctermfg=236 ctermbg=35
 highlight User4         cterm=NONE ctermfg=236 ctermbg=181
 highlight User5         cterm=NONE ctermfg=236 ctermbg=179
 
-highlight! StatusLine   cterm=NONE ctermfg=255 ctermbg=63
-highlight! StatusLineNC cterm=NONE ctermfg=252  ctermbg=60
+highlight! StatusLine   cterm=NONE ctermfg=255 ctermbg=62
+highlight! StatusLineNC cterm=NONE ctermfg=251  ctermbg=239
 highlight! WildMenu     cterm=NONE ctermfg=16  ctermbg=255
 highlight! VertSplit    cterm=NONE ctermfg=237 ctermbg=237
 highlight! WinSeparator cterm=NONE ctermfg=237 ctermbg=237
@@ -57,9 +57,14 @@ highlight! NonText      cterm=NONE ctermfg=241
 
 highlight! ModeMsg      cterm=NONE ctermfg=233 ctermbg=44
 
-highlight! Pmenu        cterm=NONE ctermfg=252 ctermbg=239
-highlight! PmenuSel     cterm=NONE ctermfg=255 ctermbg=166
-highlight! PmenuSbar    cterm=NONE             ctermbg=236
+" highlight! Pmenu        cterm=NONE ctermfg=252 ctermbg=239
+" highlight! PmenuSel     cterm=NONE ctermfg=255 ctermbg=63
+" highlight! PmenuSbar    cterm=NONE             ctermbg=236
+" highlight! PmenuThumb   cterm=NONE             ctermbg=243
+
+highlight! Pmenu        cterm=NONE ctermfg=235 ctermbg=249
+highlight! PmenuSel     cterm=NONE ctermfg=255 ctermbg=63
+highlight! PmenuSbar    cterm=NONE             ctermbg=238
 highlight! PmenuThumb   cterm=NONE             ctermbg=243
 
 highlight! Directory    cterm=NONE ctermfg=18
@@ -72,9 +77,9 @@ highlight! Identifier   cterm=NONE ctermfg=146
 highlight! Statement    cterm=NONE ctermfg=203
 highlight! PreProc      cterm=NONE ctermfg=177
 highlight! Type         cterm=NONE ctermfg=146
-highlight! Search       cterm=NONE ctermfg=233 ctermbg=214
-highlight! CurSearch    cterm=NONE ctermfg=233 ctermbg=222
-highlight! MatchParen   cterm=NONE ctermfg=233 ctermbg=222
+highlight! Search       cterm=NONE ctermfg=16 ctermbg=42
+highlight! CurSearch    cterm=NONE ctermfg=233 ctermbg=214
+highlight! MatchParen   cterm=NONE ctermfg=16 ctermbg=42
 highlight! Tag          cterm=NONE ctermfg=36
 highlight! Folded       cterm=NONE ctermfg=134 ctermbg=NONE
 highlight! Error        cterm=NONE ctermfg=255 ctermbg=160
