@@ -1,4 +1,4 @@
--- Tabs
+-- Tabs / spaces
 vim.opt.expandtab = true -- insert space characters when <tab> is pressed
 vim.opt.softtabstop = 4  -- number of spaces to insert when <tab> is pressed
 vim.opt.tabstop = 4      -- width of tab characters
@@ -69,17 +69,19 @@ local statusline = {
     '%0*'            -- reset color
     --]]
 
-    ' %y │ ', -- file type
-    '%f ', -- file path
+    ' %f ', -- file path
+    '%y ', -- file type
     '%m ', -- modified flag
     '%=', -- -->
+    '%P • ', -- Percentage through file
     'Ln %l', -- current line
     '/', -- '/'
     '%L ', -- total lines
-    '%P │ ', -- Percentage through file
-    'Col %v │ ', -- current column
-    "%{&spelllang} ", -- spelllang
-    "%{&ff} ", -- file format
+    'Col %v • ', -- current column
+    "Tabstop: %{&tabstop} • ", -- tabstop
+    "[%{&fileencoding}, ", -- file encoding
+    "%{&spelllang}, ", -- spelllang
+    "%{&ff}] ", -- file format
 }
 
 vim.opt.statusline = table.concat(statusline, '')
@@ -117,4 +119,4 @@ vim.cmd([[
 
 -- Set default color scheme
 vim.o.termguicolors = false
-vim.cmd('colorscheme garden')
+vim.cmd('colorscheme cake')

@@ -1,4 +1,4 @@
-" Garen Color Scheme
+" Garden Color Scheme
 "
 " cterm 256-color-compatible. No GUI colors.
 "

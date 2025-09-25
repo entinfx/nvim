@@ -79,19 +79,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Set up diagnostic messages (warnings, errors)
 vim.diagnostic.config({
-    --[[virtual_text = true, -- Show inline diagnostics text
-    signs = true, -- Show warning/error signs in signcolumn in the gutter
+    virtual_text = true,      -- Show inline diagnostics text
+    signs = true,             -- Show warning/error signs in signcolumn in the gutter
     update_in_insert = false, -- Dynamic updating (might be slow)
-    severity_sort = true, -- Sort diagnostics by severity
+    severity_sort = true,     -- Sort diagnostics by severity
 
     float = {
         border = "rounded",
         source = false,
-    },--]]
+    },
 
-    virtual_lines = {
-        current_line = true,
-    }
+    -- virtual_lines = {
+    -- current_line = true,
+    -- }
 })
 
 vim.opt.signcolumn = "yes" -- Always show signcolumn to avoid jumping
